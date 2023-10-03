@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "582356925682",
+    "project_id": "mynotes-moyarishka",
+    "storage_bucket": "mynotes-moyarishka.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582356925682:android:c4fd95feb1037ea9e9646b",
+        "android_client_info": {
+          "package_name": "com.moyarishka123.mynotes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUymePu0vzzDtpXStU89xRzctm6u2sX7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
