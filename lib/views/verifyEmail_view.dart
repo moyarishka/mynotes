@@ -20,7 +20,6 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
               onPressed: () async {
                 final user = FirebaseAuth.instance.currentUser;
                 await user?.sendEmailVerification();
-                print(user);
               },
               child: const Text('Send Email verification'))
         ],
