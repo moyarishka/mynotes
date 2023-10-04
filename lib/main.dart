@@ -7,6 +7,7 @@ import 'package:mynotes/views/login_view.dart';
 import 'package:mynotes/views/notes_view.dart';
 import 'package:mynotes/views/register_view.dart';
 import 'package:mynotes/views/verifyEmail_view.dart';
+import 'dart:developer' as console show log;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +22,7 @@ void main() {
       RouteConstants.login: (context) => const LoginView(),
       RouteConstants.register: (context) => const RegisterView(),
       RouteConstants.notes: (context) => const NotesView(),
+      RouteConstants.verification: (context) => const VerifyEmailView(),
     },
   ));
 }
