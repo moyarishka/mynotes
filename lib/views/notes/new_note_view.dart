@@ -65,13 +65,13 @@ class _NewNoteViewState extends State<NewNoteView> {
     }
   }
 
-  @override
-  void dispose() {
-    _deleteNoteIfEmpty();
-    _saveNoteIfNotEmpty();
-    _textController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _deleteNoteIfEmpty();
+  //   _saveNoteIfNotEmpty();
+  //   _textController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +80,10 @@ class _NewNoteViewState extends State<NewNoteView> {
         body: FutureBuilder(
           builder: (context, snapshot) {
             switch (snapshot.connectionState) {
-              // TODO: Handle this case.
               case ConnectionState.done:
-                _note = snapshot.data as DatabaseNote;
+                if (snapshot.data != null) {
+                  _note = snapshot.data as DatabaseNote;
+                }
                 _setupTextControllerListener();
                 return TextField(
                   controller: _textController,
