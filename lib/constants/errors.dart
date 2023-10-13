@@ -6,4 +6,5 @@ class ErrorConstants {
   static const String emailIsInUse = 'Email is already in use';
   static const String emailInvalid = 'Email is invalid';
   static const String authenticationError = 'Authentication Error';
+  static const String faildToRegister = 'Failed to Register';
 }

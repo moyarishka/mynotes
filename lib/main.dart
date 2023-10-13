@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mynotes/constants/routes.dart';
-import 'package:mynotes/services/auth/auth_service.dart';
 import 'package:mynotes/services/auth/bloc/auth_bloc.dart';
 import 'package:mynotes/services/auth/bloc/auth_event.dart';
 import 'package:mynotes/services/auth/bloc/auth_state.dart';
@@ -10,7 +9,7 @@ import 'package:mynotes/views/login_view.dart';
 import 'package:mynotes/views/notes/create_update_note_view.dart';
 import 'package:mynotes/views/notes/notes_view.dart';
 import 'package:mynotes/views/register_view.dart';
-import 'package:mynotes/views/verifyEmail_view.dart';
+import 'package:mynotes/views/verify_email_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,10 +24,6 @@ void main() {
       child: const HomePage(),
     ),
     routes: {
-      RouteConstants.login: (context) => const LoginView(),
-      RouteConstants.register: (context) => const RegisterView(),
-      RouteConstants.notes: (context) => const NotesView(),
-      RouteConstants.verification: (context) => const VerifyEmailView(),
       RouteConstants.createOrUpdateNote: (context) =>
           const CreateUpdateNoteView(),
     },
@@ -49,6 +44,8 @@ class HomePage extends StatelessWidget {
           return const VerifyEmailView();
         } else if (state is AuthStateLoggedOut) {
           return const LoginView();
+        } else if (state is AuthStateRegistering) {
+          return const RegisterView();
         } else {
           return const Scaffold(
             body: CircularProgressIndicator(),
